@@ -31,39 +31,20 @@
   </div>
 <script>
 
-  //selection of element
-  let titleContainer = document.querySelector("#main-header");
-  titleContainer.style.border = "5px solid black";
+ let  item2 = document.querySelector(".list-group-item:nth-child(2)");
+ item2.style.backgroundColor ="green";
 
-  let addItemSelection = document.querySelector(".title");
-  addItemSelection.style.color ="green";
-  addItemSelection.style.fontWeight = "bold";
+ let  item3 = document.querySelector(".list-group-item:nth-child(3)");
+ item3.style.visibility = "hidden";
 
-  //bold the class name 
-  let ulSelcetion = document.getElementById("items");
-  ulSelcetion.style.fontWeight = "bold";
+ let itemSelection = document.querySelectorAll(".list-group-item")
+ itemSelection[1].style.color = "green";
 
-  //adding new item as item5
-  let li = document.createElement("li");
-  li.innerText="Item5";
-  ulSelcetion.appendChild(li);
-
-  let itemSelection = document.getElementsByClassName("list-group-item");
-  let liSelection = document.getElementsByTagName("li");
+ let itemSelection1 = document.querySelectorAll(".list-group-item:nth-child(odd)");
  
-  for(let i = 0; i<itemSelection.length; i++){
-    itemSelection[i].style.color = "green";
-  }
-
-  console.log(liSelection.length)
-  for(let j = 0; j<liSelection.length; j++){
-    liSelection[j].style.backgroundColor= "rgba(10,10,10,0.5)";
-  }
-
-
-
-
-
+ for(let i = 0; i<itemSelection1.length; i++){
+  itemSelection1[i].style.backgroundColor = "green"
+ }
 </script>
 </body>
 </html>
