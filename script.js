@@ -1,5 +1,5 @@
 
-// selection 
+// selection as of required
 
 let formSelection = document.querySelector("#addForm");
 let taskSelection = document.querySelector("#item");
