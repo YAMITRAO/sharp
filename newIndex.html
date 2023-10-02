@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,24 +28,66 @@
       <li class="list-group-item">Item 3</li>
       <li class="list-group-item">Item 4</li>
     </ul>
+    <span>I am Span</span>
    </div>
   </div>
 <script>
+  //selection of ul 
+  let ul = document.querySelector("#items");
 
- let  item2 = document.querySelector(".list-group-item:nth-child(2)");
- item2.style.backgroundColor ="green";
+  //ul parent that is div
+  let ulParent=  ul.parentElement;
+  ulParent.style.backgroundColor = "rgba(20,20,20,0.4)"
 
- let  item3 = document.querySelector(".list-group-item:nth-child(3)");
- item3.style.visibility = "hidden";
+//ui last child element that is li as text item4
+  let lastElementChild = ul.lastElementChild;
+  lastElementChild.style.color ="green"
 
- let itemSelection = document.querySelectorAll(".list-group-item")
- itemSelection[1].style.color = "green";
+  //its a text node as line break
+  let lastChild = ul.lastChild;
 
- let itemSelection1 = document.querySelectorAll(".list-group-item:nth-child(odd)");
+  // it is pending 
  
- for(let i = 0; i<itemSelection1.length; i++){
-  itemSelection1[i].style.backgroundColor = "green"
- }
+
+  //first child element that is li as item1
+  ul.firstElementChild.style.color="red"
+
+  //firstchild that is a text node
+  let firstChild = ul.firstChild;
+
+  //next sibling node that is a text node
+  let nextSibling = ul.nextSibling;
+
+  // next sibling node that is a span 
+  let nextSiblingNode = ul.nextElementSibling;
+
+  //previous sibling that is a text node
+  let previousSibling = ul.previousSibling;
+
+  //previous sibling element that is h2 element
+  let previousSiblingEle = ul.previousElementSibling;
+  previousSiblingEle.style.fontSize = "40px";
+
+  //
+  let createLi = document.createElement("li");
+  createLi.className = "li_item";
+  createLi.id="li_id";
+  createLi.setAttribute('title', "this is create li element")
+  let textNodee = document.createTextNode("Hello This is Li");
+  createLi.append(textNodee);
+  ul.append(createLi)
+
+  //add an item to 
+let selectListner = document.querySelector("#header-title");
+let createDiv = document.createElement("div");
+createDiv.innerText="HEllo";
+createDiv.className = "div"
+selectListner.parentElement.insertBefore(createDiv, selectListner);
+
+//add before item item 1;
+ul.insertBefore(createDiv, ul.firstElementChild)
 </script>
 </body>
 </html>
+index.html
+Displaying index.html.
