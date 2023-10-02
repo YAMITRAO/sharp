@@ -39,11 +39,29 @@
   addItemSelection.style.color ="green";
   addItemSelection.style.fontWeight = "bold";
 
-  let itemSelection = document.getElementsByClassName("list-group-item");
-itemSelection[2].style.backgroundColor="green";
-
-let ulSelcetion = document.getElementById("items");
+  //bold the class name 
+  let ulSelcetion = document.getElementById("items");
   ulSelcetion.style.fontWeight = "bold";
+
+  //adding new item as item5
+  let li = document.createElement("li");
+  li.innerText="Item5";
+  ulSelcetion.appendChild(li);
+
+  let itemSelection = document.getElementsByClassName("list-group-item");
+  let liSelection = document.getElementsByTagName("li");
+ 
+  for(let i = 0; i<itemSelection.length; i++){
+    itemSelection[i].style.color = "green";
+  }
+
+  console.log(liSelection.length)
+  for(let j = 0; j<liSelection.length; j++){
+    liSelection[j].style.backgroundColor= "rgba(10,10,10,0.5)";
+  }
+
+
+
 
 
 </script>
