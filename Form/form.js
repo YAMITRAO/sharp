@@ -19,6 +19,12 @@ if(localStorage.length > 0){
         let createDiv = document.createElement("div");
         let createh3 = document.createElement("h3");
         let createp = document.createElement("p");
+        let createBtn = document.createElement("button");
+
+        createBtn.className ="deleteBtn";
+        createBtn.id = "deleteBtn";
+        createBtn.innerText = "delete"
+        createDiv.className = "user";
     
         createDiv.className = "user";
         createh3.appendChild(document.createTextNode(item.name));
@@ -28,6 +34,7 @@ if(localStorage.length > 0){
     
         createDiv.appendChild(createh3);
         createDiv.appendChild(createp);
+        createDiv.appendChild(createBtn);
     
         div.appendChild(createDiv);
     });
@@ -53,7 +60,11 @@ function onSubmit(e){
         let createDiv = document.createElement("div");
         let createh3 = document.createElement("h3");
         let createp = document.createElement("p");
-    
+        let createBtn = document.createElement("button");
+
+        createBtn.className ="deleteBtn";
+        createBtn.id = "deleteBtn";
+        createBtn.innerText = "delete"
         createDiv.className = "user";
         createh3.appendChild(document.createTextNode(item.name));
         createh3.style.color ="rgba(150,160,100, 0.9)"
@@ -62,9 +73,9 @@ function onSubmit(e){
     
         createDiv.appendChild(createh3);
         createDiv.appendChild(createp);
-
+        createDiv.appendChild(createBtn);
         div.appendChild(createDiv);
-        
+
         nameSelection.value = "";
         emailSelection.value = "";
 
@@ -73,4 +84,62 @@ function onSubmit(e){
     // nameSelection.value = "";
     // emailSelection.value = "";
     
+}
+
+
+//delet operation on selected 
+
+div.addEventListener('click', onClick);
+
+function onClick(e){
+
+    if(e.target.className == "deleteBtn"){
+
+        let targetName = e.target.parentElement.firstChild.innerText;
+        let targetEmail = e.target.previousSibling.innerText;
+
+        data = JSON.parse(localStorage.getItem("usersData"));
+        
+
+        let tempArr = [];
+        for(let i = 0; i<data.length; i++){
+            if(targetName == data[i].name && targetEmail == data[i].email){
+               continue
+            }
+            tempArr.push(data[i]);
+        }
+        console.log(tempArr);
+        data = tempArr;
+
+        localStorage.setItem("usersData",JSON.stringify(data));
+    
+    div.innerHTML="";
+
+
+ JSON.parse(localStorage.getItem("usersData")).forEach( (item) => {
+        let createDiv = document.createElement("div");
+        let createh3 = document.createElement("h3");
+        let createp = document.createElement("p");
+        let createBtn = document.createElement("button");
+
+        createBtn.className ="deleteBtn";
+        createBtn.id = "deleteBtn";
+        createBtn.innerText = "delete"
+        createDiv.className = "user";
+        createh3.appendChild(document.createTextNode(item.name));
+        createh3.style.color ="rgba(150,160,100, 0.9)"
+        createp.appendChild(document.createTextNode(item.email));
+        createp.style.color = " rgba(10,75,80, 0.7)"
+    
+        createDiv.appendChild(createh3);
+        createDiv.appendChild(createp);
+        createDiv.appendChild(createBtn);
+        div.appendChild(createDiv);
+
+        nameSelection.value = "";
+        emailSelection.value = "";
+
+    });
+    }
+
 }

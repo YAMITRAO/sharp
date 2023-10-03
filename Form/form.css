@@ -97,3 +97,18 @@ color: rgb(204, 97, 97);
     margin: 5px;
 }
 
+
+.deleteBtn{
+    font-size: 14px;
+    background-color: rgb(199, 102, 102);
+    border-radius: 10px;
+    border: none;
+    padding:5px;
+    color: white;
+    margin-top:3px;
+}
+.deleteBtn:hover{
+    scale: 1.01;
+    background-color: rgb(200, 132, 122);
+    font-size: 15px;
+}
