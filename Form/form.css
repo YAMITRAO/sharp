@@ -98,17 +98,27 @@ color: rgb(204, 97, 97);
 }
 
 
-.deleteBtn{
+.deleteBtn, .editBtn{
     font-size: 14px;
     background-color: rgb(199, 102, 102);
     border-radius: 10px;
     border: none;
     padding:5px;
-    color: white;
+    color:   white;
     margin-top:3px;
+    width:60px;
 }
-.deleteBtn:hover{
+.deleteBtn:hover, .editBtn:hover{
     scale: 1.01;
     background-color: rgb(200, 132, 122);
     font-size: 15px;
+}
+
+.editBtn {
+    background-color: rgb(33, 153, 194);
+    margin-left: 10px;
+    width:60px;
+}
+.editBtn:hover{
+    background-color: rgb(33, 153, 194, 0.6);
 }
